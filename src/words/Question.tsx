@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useStoreDispatch, useStoreState } from "../redux_module/redux.hook";
-import { clearQustion, setQuestion } from "./redux/action";
+import { clearQustion, setQuestion } from "./redux/question.action";
 
 export default function Question() {
   //
@@ -21,7 +21,7 @@ export default function Question() {
   };
 
   return (
-    <div style={{ display: "inline-block" }}>
+    <div className="question-container">
       <input onChange={onChangeQuestionWords} value={words} />
       <button onClick={onClickSetting}>입력</button>
       <button onClick={onClickClear}>리셋</button>

@@ -1,8 +1,8 @@
 // store.ts
 import React, { createContext } from "react";
 import { createStore } from "./simple.store";
-import { CounterAction } from "../counter/redux/action";
-import { counterReducer } from "../counter/redux/reducer";
+import { CounterAction } from "../redux/action";
+import { counterReducer } from "../redux/reducer";
 
 type Dispatch<A> = (action: A) => void;
 

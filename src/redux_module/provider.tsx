@@ -1,7 +1,8 @@
 // store.ts
 import React, { createContext } from "react";
 import { RootState, RootAction, rootReducer } from "../rootReducer";
-import { initialQuestionReducer } from "../words/redux/reducer";
+import { initialQuestionReducer } from "../words/redux/questionReducer";
+import { iniitialAnswerReducer } from "../words/redux/answerReducer";
 
 export type Dispatch<A> = (action: A) => void;
 
@@ -12,6 +13,7 @@ export const DispatchContext = createContext<Dispatch<RootAction>>(() => {
 
 const initialRootState = {
   question: initialQuestionReducer(),
+  answer: iniitialAnswerReducer(),
 };
 
 interface ProviderProps {
