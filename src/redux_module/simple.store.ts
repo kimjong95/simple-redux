@@ -1,6 +1,6 @@
-type Reducer<S, A> = (state: S, action: A) => S;
+export type Reducer<S, A> = (state: S, action: A) => S;
 
-interface Store<S, A> {
+export interface Store<S, A> {
   getState: () => S;
   dispatch: (action: A) => void;
   subscribe: (listener: () => void) => () => void;

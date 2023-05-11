@@ -1,13 +1,14 @@
 import "./App.css";
-import Counter from "./counter/Counter";
-import { CounterProvider } from "./redux_module/simple.provider";
+import { Provider } from "./redux_module/provider";
+import Question from "./words/Question";
 
-//
 function App() {
+  //
   return (
-    <CounterProvider>
-      <Counter />
-    </CounterProvider>
+    <Provider>
+      {/* <Counter /> */}
+      <Question />
+    </Provider>
   );
 }
 

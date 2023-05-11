@@ -1,8 +1,8 @@
 // store.ts
 import React, { createContext } from "react";
 import { createStore } from "./simple.store";
-import { CounterAction } from "../redux/action";
-import { counterReducer } from "../redux/reducer";
+import { CounterAction } from "../counter/redux/action";
+import { counterReducer } from "../counter/redux/reducer";
 
 type Dispatch<A> = (action: A) => void;
 
@@ -16,7 +16,7 @@ export const CounterDispatchContext = createContext<Dispatch<CounterAction>>(
 );
 
 interface CounterProvider {
-  children: React.ReactElement;
+  children: React.ReactElement | React.ReactElement[];
 }
 
 export function CounterProvider({ children }: CounterProvider) {
