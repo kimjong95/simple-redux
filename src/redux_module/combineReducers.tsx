@@ -1,4 +1,4 @@
-import { Reducer } from "./simple.store";
+import { Reducer } from "./store";
 
 function combineReducers<S, A>(reducers: {
   [K in keyof S]: Reducer<S[K], A>;

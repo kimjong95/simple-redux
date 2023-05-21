@@ -19,8 +19,8 @@ const setQuestion = (value: string): QustionSettingAction => ({
   payload: value,
 });
 
-const clearQustion = (): QustionClearAction => ({
+const clearQuestion = (): QustionClearAction => ({
   type: QUESTION.CLEAR,
 });
 
-export { setQuestion, clearQustion };
+export { setQuestion, clearQuestion };

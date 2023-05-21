@@ -1,4 +1,4 @@
-import { combineReducers } from "./redux_module/simple.combineReducers";
+import { combineReducers } from "./redux_module/combineReducers";
 import { AnswerAction } from "./words/redux/answer.action";
 import { AnswerState, answerReducer } from "./words/redux/answerReducer";
 import { QuestionAction } from "./words/redux/question.action";

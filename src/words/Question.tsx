@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { useStoreDispatch, useStoreState } from "../redux_module/redux.hook";
-import { clearQustion, setQuestion } from "./redux/question.action";
+import { clearQuestion, setQuestion } from "./redux/question.action";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../rootReducer";
 
 export default function Question() {
   //
-  const { question } = useStoreState();
-  const dispatch = useStoreDispatch();
+  const question = useSelector((state: RootState) => state.question);
+  const dispatch = useDispatch();
+
   const [words, setWords] = useState("");
 
   const onChangeQuestionWords = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +19,7 @@ export default function Question() {
   };
 
   const onClickClear = () => {
-    dispatch(clearQustion());
+    dispatch(clearQuestion());
   };
 
   return (
