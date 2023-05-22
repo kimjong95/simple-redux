@@ -1,8 +1,8 @@
-// store.ts
-import React, { createContext } from "react";
-import { RootState, RootAction, rootReducer } from "../rootReducer";
-import { initialQuestionReducer } from "../words/redux/questionReducer";
+import React from "react";
 import { initialAnswerReducer } from "../words/redux/answerReducer";
+import { initialQuestionReducer } from "../words/redux/questionReducer";
+import { RootAction, RootState, rootReducer } from "../rootReducer";
+import { createContext } from "react";
 
 export type Dispatch<A> = (action: A) => void;
 
@@ -23,6 +23,7 @@ interface ProviderProps {
 export function Provider({ children }: ProviderProps) {
   //
   const [store, dispatch] = React.useReducer(rootReducer, initialRootState);
+
   return (
     <DispatchContext.Provider value={dispatch}>
       <StoreContext.Provider value={store}>{children}</StoreContext.Provider>

@@ -5,7 +5,7 @@ export interface QuestionState {
   question: string;
 }
 
-export function initialQuestionReducer() {
+export function initialQuestionReducer(): QuestionState {
   return {
     question: "",
   };

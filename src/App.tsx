@@ -1,22 +1,13 @@
-import { Provider } from "react-redux";
 import "./App.css";
+import { Provider } from "./example/provider";
 import Answer from "./words/Answer";
 import Question from "./words/Question";
-import store from "./redux/rootStore";
 
 function App() {
   //
   return (
-    // <SimpleProvider>
-    //   {/* <Counter /> */}
-    //   <div>
-    //     <Question />
-    //   </div>
-    //   <div>
-    //     <Answer />
-    //   </div>
-    // </SimpleProvider>
-    <Provider store={store}>
+    <Provider>
+      {/* <Counter /> */}
       <div>
         <Question />
       </div>
@@ -24,6 +15,14 @@ function App() {
         <Answer />
       </div>
     </Provider>
+    // <Provider store={store}>
+    //   <div>
+    //     <Question />
+    //   </div>
+    //   <div>
+    //     <Answer />
+    //   </div>
+    // </Provider>
   );
 }
 

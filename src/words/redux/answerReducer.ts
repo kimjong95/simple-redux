@@ -1,19 +1,18 @@
 import { RootAction } from "../../rootReducer";
 import { ANSWER, AnswerAction } from "./answer.action";
-import { initialQuestionReducer } from "./questionReducer";
 
 export interface AnswerState {
   answer: string;
 }
 
-export function iniitialAnswerReducer() {
+export function initialAnswerReducer() {
   return {
     answer: "",
   };
 }
 
 const answerReducer = (
-  state: AnswerState = iniitialAnswerReducer(),
+  state: AnswerState = initialAnswerReducer(),
   action: RootAction
 ): AnswerState => {
   if (isAnswerAction(action)) {
