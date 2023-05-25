@@ -7,15 +7,6 @@ import { Provider } from "react-redux";
 function App() {
   //
   return (
-    // <Provider>
-    //   {/* <Counter /> */}
-    //   <div>
-    //     <Question />
-    //   </div>
-    //   <div>
-    //     <Answer />
-    //   </div>
-    // </Provider>
     <Provider store={store}>
       <div>
         <Question />
