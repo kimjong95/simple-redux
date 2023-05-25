@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useStoreDispatch, useStoreState } from "../redux_module/redux.hook";
+import { useDispatch, useSelector } from "../redux_module/redux.hook";
 import { clearQustion, setQuestion } from "./redux/question.action";
 
 export default function Question() {
   //
-  const { question } = useStoreState();
-  const dispatch = useStoreDispatch();
+  const { question } = useSelector();
+  const dispatch = useDispatch();
   const [words, setWords] = useState("");
 
   const onChangeQuestionWords = (e: React.ChangeEvent<HTMLInputElement>) => {
