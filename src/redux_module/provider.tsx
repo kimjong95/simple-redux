@@ -1,8 +1,7 @@
 // store.ts
 import React, { createContext } from "react";
 import { RootState, RootAction, rootReducer } from "../rootReducer";
-import { initialQuestionReducer } from "../words/redux/questionReducer";
-import { initialAnswerReducer } from "../words/redux/answerReducer";
+import store from "../redux/rootStore";
 
 export type Dispatch<A> = (action: A) => void;
 
@@ -11,21 +10,19 @@ export const DispatchContext = createContext<Dispatch<RootAction>>(() => {
   //
 });
 
-const initialRootState = {
-  question: initialQuestionReducer(),
-  answer: initialAnswerReducer(),
-};
-
 interface ProviderProps {
   children: React.ReactNode;
 }
 
 export function Provider({ children }: ProviderProps) {
   //
-  const [store, dispatch] = React.useReducer(rootReducer, initialRootState);
+  const [rootStore, dispatch] = React.useReducer(rootReducer, store.getState());
+
   return (
     <DispatchContext.Provider value={dispatch}>
-      <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
+      <StoreContext.Provider value={rootStore}>
+        {children}
+      </StoreContext.Provider>
     </DispatchContext.Provider>
   );
 }
